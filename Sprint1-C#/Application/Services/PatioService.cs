@@ -31,25 +31,7 @@ namespace Sprint1_C_.Application.Services
             return patio == null ? null : _mapper.Map<PatioResponse>(patio);
         }
 
-        public async Task<PagedResult<PatioResponse>> ObterPorPagina(int numeroPag, int tamanhoPag)
-        {
-            var query = _context.Patio.AsQueryable();
-            var total = await query.CountAsync();
-            var itens = await query
-                .Skip((numeroPag - 1) * tamanhoPag)
-                .Take(tamanhoPag)
-                .ProjectTo<PatioResponse>(_mapper.ConfigurationProvider)
-                .ToListAsync();
-
-            return new PagedResult<PatioResponse>
-            {
-                Numeropag = numeroPag,
-                Tamnhopag = tamanhoPag,
-                Total = total,
-                Itens = itens
-            };
-        }
-
+     
         public PatioResponse Criar(PatioRequest request)
         {
             var novoPatio = _mapper.Map<Patio>(request);

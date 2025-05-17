@@ -21,9 +21,6 @@ namespace Sprint1_C_.Mappings
             CreateMap<PatioRequest, Patio>();
             CreateMap<Patio, PatioResponse>();
 
-            // TagRfid
-            CreateMap<TagRfidRequest, TagRfid>();
-            CreateMap<TagRfid, TagRfidResponse>();
         }
     }
 }

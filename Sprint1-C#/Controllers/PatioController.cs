@@ -27,12 +27,7 @@ namespace Sprint1_C_.Controllers
             return Ok(patio);
         }
 
-        [HttpGet("pagina")]
-        public async Task<ActionResult<PagedResult<PatioResponse>>> GetPaged(int numeroPag = 1, int tamanhoPag = 10)
-        {
-            var result = await _patioService.ObterPorPagina(numeroPag, tamanhoPag);
-            return Ok(result);
-        }
+        
 
         [HttpPost]
         public IActionResult Create([FromBody] PatioRequest request)

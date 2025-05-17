@@ -9,7 +9,6 @@ namespace Sprint1_C_.Application.DTOs.Response
         public string Marca { get; set; }
         public MotoStatus Status { get; set; }
         public int PatioId { get; set; }
-        public int TagId { get; set; }
-        public TagRfidResponse Tag { get; set; } = new();
+        
     }
 }

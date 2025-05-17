@@ -31,24 +31,7 @@ namespace Sprint1_C_.Application.Services
             return filial == null ? null : _mapper.Map<FilialResponse>(filial);
         }
 
-        public async Task<PagedResult<FilialResponse>> ObterPorPagina(int numeroPag, int tamanhoPag)
-        {
-            var query = _context.Filial.AsQueryable();
-            var total = await query.CountAsync();
-            var itens = await query
-                .Skip((numeroPag - 1) * tamanhoPag)
-                .Take(tamanhoPag)
-                .ProjectTo<FilialResponse>(_mapper.ConfigurationProvider)
-                .ToListAsync();
-
-            return new PagedResult<FilialResponse>
-            {
-                Numeropag = numeroPag,
-                Tamnhopag = tamanhoPag,
-                Total = total,
-                Itens = itens
-            };
-        }
+      
 
         public FilialResponse Criar(FilialRequest request)
         {
