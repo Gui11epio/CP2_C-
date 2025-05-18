@@ -38,7 +38,7 @@ namespace Sprint1_C_.Application.Services
         {
             var novaMoto = _mapper.Map<Moto>(request);
 
-            // Primeiro salva a moto (ela precisa existir para ser referenciada)
+            
             _context.Moto.Add(novaMoto);
             _context.SaveChanges();
             var response = _mapper.Map<MotoResponse>(novaMoto);

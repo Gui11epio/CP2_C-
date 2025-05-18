@@ -47,7 +47,7 @@ namespace Sprint1_C_.Application.Services
             var patio = _context.Patio.Find(id);
             if (patio == null) return false;
 
-            _mapper.Map(request, patio); // Atualiza propriedades
+            _mapper.Map(request, patio);
 
             _context.Patio.Update(patio);
             _context.SaveChanges();
